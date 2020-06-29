@@ -7,13 +7,18 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css" type="text/css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.min.js"></script>
   </head>
   <body>
 
     <div id="app">
       <h1>MELHORIAS PROJETO II</h1>
       <input type="text" id="new-task" placeholder="Tarefa"></input>
-      <input type="text" id="new-priority" placeholder="Prioridade"></input>
+      <select name="new-priority" id="new-priority">
+    	<option value="Baixa">Baixa</option>
+    	<option value="Média">Média</option>
+    	<option value="Alta">Alta</option>
+  	  </select>
       <button class="sub" id="submit" onclick="submit()">Criar tarefa</button>
       <div id="task-list"></div>
     </div>
