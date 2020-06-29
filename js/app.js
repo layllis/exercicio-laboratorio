@@ -26,11 +26,22 @@
     render();
   }
 
+  function validation(new_task, new_priority) {
+    if (new_task.trim().length <= 0 || new_priority.trim().length <= 0) {
+      Swal.fire({
+      text: 'Todos os campos devem ser preenchidos!'
+      });
+      return false;
+    }
+    return true;
+  }
+
   function submit() {
     let new_task = document.getElementById('new-task');
     let new_priority = document.getElementById('new-priority');
-    
-    update({ action:"add", value: {task: new_task.value, priority: new_priority.value} });
+    if (validation(new_task.value, new_priority.options[new_priority.selectedIndex].value)) {
+      update({ action:"add", value: {task: new_task.value, priority: new_priority.options[new_priority.selectedIndex].value} });
+    }
   }
 
   function update(changes) {
